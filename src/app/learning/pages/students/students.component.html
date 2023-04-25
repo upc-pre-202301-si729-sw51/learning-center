@@ -1,1 +1,25 @@
-<p>students works!</p>
+<div class="table-wrapper">
+  <h1>Students Catalog</h1>
+  <h2>{{ isEditMode ? 'Edit Student' : 'Add New Student'}}</h2>
+  <form (submit)="onSubmit()" #studentForm='ngForm'>
+    <mat-form-field>
+      <input matInput placeholder="Name" name="name" required [(ngModel)]="studentData.name">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" matInput placeholder="Age" name="age" required [(ngModel)]="studentData.age">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Address" name="address" required [(ngModel)]="studentData.address">
+    </mat-form-field>
+    <ng-container *ngIf="isEditMode; else elseTemplate">
+      <button mat-button color="primary">Update</button>
+      <button mat-button color="warn" (click)="cancelEdit()">Cancel</button>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <button mat-button color="primary">Add</button>
+    </ng-template>
+  </form>
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z0">
+
+  </table>
+</div>
