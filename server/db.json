@@ -18,5 +18,12 @@
       "age": 38,
       "address": "One Secret Place"
     }
+  ],
+  "users": [
+    {
+      "email": "john.doe@gmail.com",
+      "password": "$2a$10$FO.vL6zDL4SOrDy/P91uXObu3wjxcUvdJGWGqfJ7GqH3cvUG6qaca",
+      "id": 1
+    }
   ]
 }
